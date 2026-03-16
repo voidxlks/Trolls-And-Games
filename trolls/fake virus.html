@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>System Scan</title>
+
+<style>
+body {
+    background-color: black;
+    color: lime;
+    font-family: monospace;
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1 {
+    color: red;
+}
+
+#progress {
+    font-size: 28px;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>⚠ SYSTEM SECURITY SCAN ⚠</h1>
+
+<p>Scanning files for threats...</p>
+
+<p id="progress">0%</p>
+
+<script>
+let percent = 0;
+
+let scan = setInterval(function() {
+
+    percent++;
+    document.getElementById("progress").innerText = percent + "%";
+
+    if (percent >= 100) {
+        clearInterval(scan);
+        document.body.innerHTML = "<h1>😂 You just got trolled!</h1><p>No virus here.</p>";
+    }
+
+}, 50);
+</script>
+
+</body>
+</html>
